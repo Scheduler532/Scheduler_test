@@ -3,8 +3,8 @@
 
 
 
-importScripts('https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/10.4.0/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging-compat.js');
 
 // Firebase 構成情報
 const firebaseConfig = {
@@ -29,7 +29,7 @@ const messaging = firebase.messaging();
 /* eslint-disable no-restricted-globals */
 
 messaging.onBackgroundMessage((payload) => {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  console.log('Received background message ', payload);
 
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
@@ -41,4 +41,3 @@ messaging.onBackgroundMessage((payload) => {
 });
 
 /* eslint-enable no-restricted-globals */
-
